@@ -1,11 +1,15 @@
 package utils;
 
 import Entities.Furniture;
+import com.sun.org.apache.xerces.internal.impl.dv.util.Base64;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.io.IOException;
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -30,7 +34,7 @@ public class httpParser {
             }
 
             for(String url : itemList) {
-                System.err.println(url);
+                parseFurnitureItem(url, category, typeOfRoom);
             }
 
         } catch (IOException e) {
@@ -49,9 +53,9 @@ public class httpParser {
         }
     }
 
-    public void parseFurnitureItem(String url) {
-        this.documentUrl = url;
-        String itemName, itemDescription, itemImageUrl;
+    public void parseFurnitureItem(String url, String category, String typeOfRoom) {
+        this.documentUrl = "http://www.ikea.com/pl/pl/catalog/products/" + url + "/";
+        String itemName, itemDescription, itemImageUrl, itemBase64Image;
         int xItemSize, zItemSize, yItemSize;
         double itemPrice;
 
@@ -70,13 +74,14 @@ public class httpParser {
 
             //Get imageUrl (image size 3)
             itemImageUrl = getImageUrl(3);
+            itemBase64Image = imageToBase64(itemImageUrl);
 
             //Get size parameters
             xItemSize = parseSize("x");
             yItemSize = parseSize("y");
             zItemSize = parseSize("z");
 
-            Furniture furnitureItem = new Furniture(itemName,"Fotel","Pokój", itemDescription, itemImageUrl, xItemSize, yItemSize, zItemSize, itemPrice);
+            Furniture furnitureItem = new Furniture(itemName, category, typeOfRoom, itemDescription, itemImageUrl, itemBase64Image, xItemSize, yItemSize, zItemSize, itemPrice);
 
 
         } catch (IOException e) {
@@ -94,6 +99,25 @@ public class httpParser {
         Element imageNode = htmlDocument.getElementById("productImg");
         return "http://www.ikea.com" + imageNode.attr("src").replaceAll("S4.JPG", "S" + size + ".JPG");
 
+    }
+
+    private String imageToBase64(String imageUrl) {
+        String encodedImage = null;
+        try{
+            //Open a URL Stream
+            URL url = new URL(imageUrl);
+            InputStream in = url.openStream();
+            BufferedImage image = ImageIO.read(in);
+            in.close();
+
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ImageIO.write(image, "jpg", baos);
+            encodedImage = Base64.encode(baos.toByteArray());
+
+        } catch(Exception e) {
+            e.printStackTrace();
+        }
+        return encodedImage;
     }
 
     private double parsePrice() {
