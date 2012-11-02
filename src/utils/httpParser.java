@@ -1,10 +1,12 @@
 package utils;
 
+import Entities.Furniture;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,12 +15,45 @@ public class httpParser {
     String documentUrl;
     Document htmlDocument;
 
-    String itemName, itemDescription, itemImageUrl;
-    int xItemSize, zItemSize, yItemSize;
-    double itemPrice;
 
-    public void parseUrl(String url) {
+
+    public void crawlCategory(String categoryUrl, String category, String typeOfRoom) {
+        ArrayList<String> itemList = new ArrayList<String>();
+
+        try {
+            this.htmlDocument = Jsoup.connect(categoryUrl).get();
+
+            Element productList = htmlDocument.getElementById("productLists");
+            org.jsoup.select.Elements productsUrls = productList.getElementsByClass("productLink");
+            for (Element link : productsUrls) {
+                itemList.add(matchItemId(link.attr("href")));
+            }
+
+            for(String url : itemList) {
+                System.err.println(url);
+            }
+
+        } catch (IOException e) {
+            System.err.println("Wystąpił problem z dostępem do podanego adresu URL kategorii.");
+            e.printStackTrace();
+        }
+    }
+
+    private String matchItemId (String url) {
+        Pattern itemOnProductList = Pattern.compile("/pl/pl/catalog/products/(.*?)/");
+        Matcher itemMatcher = itemOnProductList.matcher(url);
+        if(itemMatcher.find()) {
+            return itemMatcher.group(0).substring(24,itemMatcher.group(0).length() - 1);
+        } else {
+            return null;
+        }
+    }
+
+    public void parseFurnitureItem(String url) {
         this.documentUrl = url;
+        String itemName, itemDescription, itemImageUrl;
+        int xItemSize, zItemSize, yItemSize;
+        double itemPrice;
 
         try {
 
@@ -41,10 +76,11 @@ public class httpParser {
             yItemSize = parseSize("y");
             zItemSize = parseSize("z");
 
-            System.out.print(getElementInfo());
+            Furniture furnitureItem = new Furniture(itemName,"Fotel","Pokój", itemDescription, itemImageUrl, xItemSize, yItemSize, zItemSize, itemPrice);
+
 
         } catch (IOException e) {
-            System.err.println("Wystąpił błąd z otwarciem podanego adresu URL.");
+            System.err.println("Wystąpił problem z dostępem do podanego adresu URL.");
             e.printStackTrace();
         }
 
@@ -122,7 +158,4 @@ public class httpParser {
         }
     }
 
-    private String getElementInfo() {
-        return this.itemName + "\n" + this.itemDescription + "\n" + this.itemImageUrl + "\nx: " + this.xItemSize + " y: " + this.yItemSize + " z: " + this.zItemSize + "\n\n";
-    }
 }

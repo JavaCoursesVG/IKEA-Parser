@@ -4,15 +4,16 @@ import java.util.ArrayList;
 
 public class Furniture {
 
-    String name, category, description, imageUrl;
+    String name, category, typeOfRoom, description, imageUrl;
     int xSize, zSize, ySize;
     double price;
 
-    public ArrayList<Furniture> furnitureList = new ArrayList<Furniture>();
+    public static ArrayList<Furniture> furnitureList = new ArrayList<Furniture>();
 
-    public Furniture(String name, String category, String description, String imageUrl, int xSize, int ySize, int zSize, double price) {
+    public Furniture(String name, String category, String typeOfRoom, String description, String imageUrl, int xSize, int ySize, int zSize, double price) {
         this.name = name;
         this.category = category;
+        this.typeOfRoom = typeOfRoom;
         this.description = description;
         this.imageUrl = imageUrl;
         this.xSize = xSize;
@@ -25,5 +26,11 @@ public class Furniture {
         System.out.println(this.name + " has been added to the furnitureList!");
         System.out.println("furnitureList has now " + furnitureList.size() + " objects.");
 
+    }
+
+    public static void listFurniture() {
+        for (Furniture item : furnitureList) {
+            System.out.println("\n" +item.name + " " + item.description);
+        }
     }
 }
