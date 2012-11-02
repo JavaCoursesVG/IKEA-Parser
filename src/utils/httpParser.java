@@ -55,7 +55,7 @@ public class httpParser {
 
     public void parseFurnitureItem(String url, String category, String typeOfRoom) {
         this.documentUrl = "http://www.ikea.com/pl/pl/catalog/products/" + url + "/";
-        String itemName, itemDescription, itemImageUrl, itemBase64Image;
+        String itemId, itemName, itemDescription, itemImageUrl, itemBase64Image;
         int xItemSize, zItemSize, yItemSize;
         double itemPrice;
 
@@ -76,12 +76,15 @@ public class httpParser {
             itemImageUrl = getImageUrl(3);
             itemBase64Image = imageToBase64(itemImageUrl);
 
+            //Create item id based on image url
+            itemId = itemImageUrl.substring(itemImageUrl.length()-15, itemImageUrl.length()-7);
+
             //Get size parameters
             xItemSize = parseSize("x");
             yItemSize = parseSize("y");
             zItemSize = parseSize("z");
 
-            Furniture furnitureItem = new Furniture(itemName, category, typeOfRoom, itemDescription, itemImageUrl, itemBase64Image, xItemSize, yItemSize, zItemSize, itemPrice);
+            Furniture furnitureItem = new Furniture(itemId, itemName, category, typeOfRoom, itemDescription, itemImageUrl, itemBase64Image, xItemSize, yItemSize, zItemSize, itemPrice);
 
 
         } catch (IOException e) {

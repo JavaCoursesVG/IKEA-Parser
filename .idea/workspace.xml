@@ -2,9 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3a021d0-4144-45e9-a88a-c3b725955484" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_5_1_18_bin.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/IKEAParser/IKEAParser.class" afterPath="$PROJECT_DIR$/out/production/IKEAParser/IKEAParser.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/IKEAParser.iml" afterPath="$PROJECT_DIR$/IKEAParser.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Entities/Furniture.java" afterPath="$PROJECT_DIR$/src/Entities/Furniture.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/IKEAParser.java" afterPath="$PROJECT_DIR$/src/IKEAParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/utils/httpParser.java" afterPath="$PROJECT_DIR$/src/utils/httpParser.java" />
     </list>
     <ignored path="IKEAParser.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -20,6 +25,10 @@
   </component>
   <component name="DaemonCodeAnalyzer">
     <disable_hints />
+  </component>
+  <component name="DatabaseView">
+    <flatten value="false" />
+    <groupTables value="false" />
   </component>
   <component name="DebuggerManager">
     <breakpoint_any>
@@ -61,74 +70,69 @@
     <favorites_list name="IKEAParser" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.12641816">
-      <split-first>
-        <leaf>
-          <file leaf-file-name="httpParser.java" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/utils/httpParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="74" column="42" selection-start="2524" selection-end="2524" vertical-scroll-proportion="-1.1538461">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="e#614#622#0" expanded="true" />
-                    <element signature="method#matchItemId#0;class#httpParser#0" expanded="false" />
-                    <element signature="method#getDescription#0;class#httpParser#0" expanded="false" />
-                    <element signature="method#getImageUrl#0;class#httpParser#0" expanded="false" />
-                    <element signature="method#parsePrice#0;class#httpParser#0" expanded="false" />
-                    <element signature="method#parseSize#0;class#httpParser#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="IKEAParser.iml" pinned="false" current="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/IKEAParser.iml">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Furniture.java" pinned="false" current="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/Entities/Furniture.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="84" column="62" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.8233831">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <element signature="method#getName#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getCategory#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getTypeOfRoom#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getDescription#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getImageUrl#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getBase64Image#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getxSize#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getzSize#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getySize#0;class#Furniture#0" expanded="false" />
-                    <element signature="method#getPrice#0;class#Furniture#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file leaf-file-name="IKEAParser.java" pinned="false" current="true" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/IKEAParser.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state line="55" column="168" selection-start="5560" selection-end="5567" vertical-scroll-proportion="0.29761904">
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="httpParser.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/httpParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="84" column="65" selection-start="2934" selection-end="2934" vertical-scroll-proportion="-9.807693">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#614#622#0" expanded="true" />
+                <element signature="method#matchItemId#0;class#httpParser#0" expanded="false" />
+                <element signature="method#getDescription#0;class#httpParser#0" expanded="false" />
+                <element signature="method#getImageUrl#0;class#httpParser#0" expanded="false" />
+                <element signature="method#parsePrice#0;class#httpParser#0" expanded="false" />
+                <element signature="method#parseSize#0;class#httpParser#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IKEAParser.iml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IKEAParser.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IKEAParser.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/IKEAParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="55" column="92" selection-start="5491" selection-end="5491" vertical-scroll-proportion="0.39461884">
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Furniture.java" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Entities/Furniture.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="117" column="103" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="method#getId#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getName#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getCategory#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getTypeOfRoom#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getDescription#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getImageUrl#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getBase64Image#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getxSize#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getzSize#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getySize#0;class#Furniture#0" expanded="false" />
+                <element signature="method#getPrice#0;class#Furniture#0" expanded="false" />
+                <element signature="method#listFurniture#0;class#Furniture#0" expanded="false" />
+                <element signature="method#saveToFile#0;class#Furniture#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindManager">
     <FindUsagesManager>
@@ -143,16 +147,26 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="expandStates">
+      <map>
+        <entry key="IKEAParser" value="true" />
+      </map>
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/httpParser.java" />
+        <option value="$PROJECT_DIR$/data.txt" />
         <option value="$PROJECT_DIR$/src/utils/httpParser.java" />
         <option value="$PROJECT_DIR$/src/Entities/Furniture.java" />
-        <option value="$PROJECT_DIR$/data.txt" />
         <option value="$PROJECT_DIR$/src/IKEAParser.java" />
       </list>
     </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState />
   </component>
   <component name="MavenRunner">
     <option name="jreName" value="#JAVA_INTERNAL" />
@@ -207,10 +221,6 @@
               <option name="myItemId" value="IKEAParser" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -222,12 +232,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IKEAParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="IKEAParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
@@ -236,6 +260,7 @@
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="Database.TableEditor.Splitter" value="0.90000004" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
@@ -262,6 +287,12 @@
       <envs />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Default" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console" temporary="true">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
       <method />
     </configuration>
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -406,8 +437,20 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
-    <list size="1">
+    <configuration default="true" type="com.intellij.persistence.run.ConsoleRunConfigurationType" factoryName="Query Language Console">
+      <option name="VM_PARAMETERS" value="" />
+      <option name="USER_CFG_CLASS" />
+      <option name="CONTEXT_PROVIDER" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
+    <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.IKEAParser" />
+      <item index="1" class="java.lang.String" itemvalue="Query Language Console.Default" />
     </list>
     <configuration name="&lt;template&gt;" type="WebApp" default="true" selected="false">
       <Host>localhost</Host>
@@ -451,16 +494,20 @@
       <created>1351865824126</created>
       <updated>1351865824126</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Working beta&#10;">
+      <created>1351868932025</created>
+      <updated>1351868932025</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6932953" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952926" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6932953" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32952926" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -473,9 +520,9 @@
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3281027" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6932953" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23905997" sideWeight="0.6704708" order="1" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23905997" sideWeight="0.6932953" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3067047" sideWeight="0.49027553" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -520,7 +567,7 @@
     <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="Image2Base64, output to txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working beta&#10;" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -537,6 +584,7 @@
     <MESSAGE value="Working parse for given url [fix]" />
     <MESSAGE value="Crawling category" />
     <MESSAGE value="Image2Base64, output to txt" />
+    <MESSAGE value="Working beta&#10;" />
   </component>
   <component name="VssConfiguration">
     <option name="CLIENT_PATH" value="" />
@@ -587,16 +635,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="uml://DATABASE/bd85325f-bdd1-4346-be9c-396bf5a876bb">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>bd85325f-bdd1-4346-be9c-396bf5a876bb</OriginalElement>
+          <nodes />
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="435.0" y="324.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/IKEAParser.iml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+        <state line="2" column="0" selection-start="79" selection-end="79" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/httpParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="74" column="42" selection-start="2524" selection-end="2524" vertical-scroll-proportion="-1.1538461">
+        <state line="84" column="65" selection-start="2934" selection-end="2934" vertical-scroll-proportion="-9.807693">
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#614#622#0" expanded="true" />
@@ -609,11 +673,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbElement:/f1d832a6/bd85325f-bdd1-4346-be9c-396bf5a876bb/bazaArcheo..furnitureItems">
+      <provider selected="true" editor-type-id="com.intellij.persistence.database.editor.DatabaseTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Entities/Furniture.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="84" column="62" selection-start="2633" selection-end="2633" vertical-scroll-proportion="0.8233831">
+        <state line="117" column="103" selection-start="3927" selection-end="3927" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="method#getId#0;class#Furniture#0" expanded="false" />
             <element signature="method#getName#0;class#Furniture#0" expanded="false" />
             <element signature="method#getCategory#0;class#Furniture#0" expanded="false" />
             <element signature="method#getTypeOfRoom#0;class#Furniture#0" expanded="false" />
@@ -624,20 +694,15 @@
             <element signature="method#getzSize#0;class#Furniture#0" expanded="false" />
             <element signature="method#getySize#0;class#Furniture#0" expanded="false" />
             <element signature="method#getPrice#0;class#Furniture#0" expanded="false" />
+            <element signature="method#listFurniture#0;class#Furniture#0" expanded="false" />
+            <element signature="method#saveToFile#0;class#Furniture#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="171" selection-start="171" selection-end="171" vertical-scroll-proportion="0.0">
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/IKEAParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="55" column="168" selection-start="5560" selection-end="5567" vertical-scroll-proportion="0.29761904">
+        <state line="55" column="92" selection-start="5491" selection-end="5491" vertical-scroll-proportion="0.39461884">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -721,7 +786,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>jsoup-1.7.1</last-edited>
+          <last-edited>mysql-connector-java-5.1.18-bin</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

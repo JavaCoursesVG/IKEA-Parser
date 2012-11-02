@@ -1,17 +1,22 @@
 package Entities;
 
+import java.beans.Statement;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.*;
 import java.util.ArrayList;
 
 public class Furniture {
 
-    private String name, category, typeOfRoom, description, imageUrl, base64Image;
+    private String id, name, category, typeOfRoom, description, imageUrl, base64Image;
     private int xSize, zSize, ySize;
     private double price;
     public static ArrayList<Furniture> furnitureList = new ArrayList<Furniture>();
 
+    public String getId() {
+        return id;
+    }
     public String getName() {
         return name;
     }
@@ -45,7 +50,8 @@ public class Furniture {
         return price;
     }
 
-    public Furniture(String name, String category, String typeOfRoom, String description, String imageUrl, String base64Image, int xSize, int ySize, int zSize, double price) {
+    public Furniture(String id, String name, String category, String typeOfRoom, String description, String imageUrl, String base64Image, int xSize, int ySize, int zSize, double price) {
+        this.id = id;
         this.name = name;
         this.category = category;
         this.typeOfRoom = typeOfRoom;
@@ -59,7 +65,7 @@ public class Furniture {
 
         furnitureList.add(this);
 
-        System.out.println(this.name + " has been added to the furnitureList!");
+        System.out.println(this.id + " " + this.name + " has been added to the furnitureList!");
         System.out.println("furnitureList has now " + furnitureList.size() + " objects.");
 
     }
@@ -70,12 +76,17 @@ public class Furniture {
         }
     }
 
+    private static String getSqlFormat(Furniture item) {
+        return "VALUES ('" + item.getId() + "', '" + item.getName() + "', '" + item.getCategory() + "', '" + item.getDescription() + "', '" + item.getTypeOfRoom() + "', '" + item.getImageUrl() + "', '" + item.getBase64Image() + "', '" + item.getPrice() + "', '" + item.getxSize() + "', '" + item.getySize() + "', '" + item.getzSize()+ "')";
+    }
+
     public static void saveToFile() {
         StringBuilder outputStringBuffer = new StringBuilder();
         BufferedWriter out = null;
 
         for (Furniture item : furnitureList) {
-            outputStringBuffer.append(item.getName()).append("|")
+            outputStringBuffer.append(item.getId()).append("|")
+                            .append(item.getName()).append("|")
                             .append(item.getDescription()).append("|")
                             .append(item.getCategory()).append("|")
                             .append(item.getTypeOfRoom()).append("|")
@@ -97,4 +108,43 @@ public class Furniture {
 
     }
 
+    public static void saveToDatabase() {
+        Connection conn = null;
+
+        try
+        {
+            String userName = "root";
+            String password = "";
+            String url = "jdbc:mysql://localhost:3306/bazaArcheo?useUnicode=yes&characterEncoding=UTF-8";
+            Class.forName("com.mysql.jdbc.Driver").newInstance ();
+            conn = DriverManager.getConnection (url, userName, password);
+            System.out.println ("Database connection established");
+
+            java.sql.Statement s = conn.createStatement();
+            for(Furniture item : furnitureList) {
+                System.out.println(getSqlFormat(item));
+                s.executeUpdate("INSERT INTO furnitureItems (id, itemName, itemCategory, itemDescription, typeOfRoom, itemImageUrl, itemBase64Image, itemPrice, sizeX, sizeY, sizeZ)" + getSqlFormat(item));
+            }
+
+            s.close ();
+
+        }
+        catch (Exception e)
+        {
+            System.err.println ("Cannot connect to database server " + e.getMessage());
+        }
+        finally
+        {
+            if (conn != null)
+            {
+                try
+                {
+                    conn.close ();
+                    System.out.println ("Database connection terminated");
+                }
+                catch (Exception e) { /* ignore close errors */ }
+            }
+        }
+
+    }
 }

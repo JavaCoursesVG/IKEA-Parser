@@ -69,5 +69,6 @@ public class IKEAParser {
         parser.crawlCategory("http://www.ikea.com/pl/pl/catalog/categories/departments/kitchen/22957/?priceFilter=true&minprice=89&maxprice=5380", "cabinet", "kitchen");
 
         Furniture.saveToFile();
+        Furniture.saveToDatabase();
     }
 }
