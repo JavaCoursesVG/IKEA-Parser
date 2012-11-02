@@ -75,14 +75,14 @@ public class Furniture {
         BufferedWriter out = null;
 
         for (Furniture item : furnitureList) {
-            outputStringBuffer.append(item.getName()).append(" ")
-                            .append(item.getDescription()).append(" ")
-                            .append(item.getCategory()).append(" ")
-                            .append(item.getTypeOfRoom()).append(" ")
-                            .append(item.getImageUrl()).append(" ")
-                            .append(item.getPrice()).append(" ")
-                            .append(item.getxSize()).append(" ")
-                            .append(item.getySize()).append(" ")
+            outputStringBuffer.append(item.getName()).append("|")
+                            .append(item.getDescription()).append("|")
+                            .append(item.getCategory()).append("|")
+                            .append(item.getTypeOfRoom()).append("|")
+                            .append(item.getImageUrl()).append("|")
+                            .append(item.getPrice()).append("|")
+                            .append(item.getxSize()).append("|")
+                            .append(item.getySize()).append("|")
                             .append(item.getzSize()).append("\n");
         }
 
