@@ -1,6 +1,5 @@
 package Entities;
 
-import java.beans.Statement;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -63,7 +62,24 @@ public class Furniture {
         this.zSize = zSize;
         this.price = price;
 
-        furnitureList.add(this);
+        boolean itemAlreadyIn = false;
+        for(Furniture item : furnitureList) {
+            if(id.equals(item.getId())) {
+                itemAlreadyIn = true;
+
+                break;
+            }
+         }
+
+
+        if(!itemAlreadyIn) {
+            furnitureList.add(this);
+        }
+        else {
+            System.err.println("Item already on list, skipping..");
+        }
+
+
 
         System.out.println(this.id + " " + this.name + " has been added to the furnitureList!");
         System.out.println("furnitureList has now " + furnitureList.size() + " objects.");
@@ -102,7 +118,7 @@ public class Furniture {
             out.write(outputStringBuffer.toString());
             out.close();
         } catch (IOException e) {
-            e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+            e.printStackTrace();
         }
 
 
